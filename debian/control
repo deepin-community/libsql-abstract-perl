@@ -1,0 +1,46 @@
+Source: libsql-abstract-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>,
+           Xavier Guimard <yadd@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libdata-dumper-concise-perl <!nocheck>,
+                     libhash-merge-perl <!nocheck>,
+                     libmoo-perl <!nocheck>,
+                     libsub-quote-perl <!nocheck>,
+                     libtest-deep-perl <!nocheck>,
+                     libtest-exception-perl <!nocheck>,
+                     libtest-simple-perl <!nocheck>,
+                     libtest-warn-perl <!nocheck>,
+                     perl
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libsql-abstract-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libsql-abstract-perl.git
+Homepage: https://metacpan.org/release/SQL-Abstract
+Rules-Requires-Root: no
+
+Package: libsql-abstract-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libhash-merge-perl,
+         libmoo-perl,
+         libsub-quote-perl
+Recommends: libtest-deep-perl,
+            libtest-simple-perl
+Breaks: libsql-abstract-limit-perl (<< 2:0.14.3~)
+Description: module to generate SQL from Perl data structures
+ SQL::Abstract is a Perl module that allows developers to generate SQL from
+ Perl data strutures, inspired by DBIx::Abstract. The intent of this module
+ is to provide abstract SQL generation methods, allowing one to generate SQL
+ while retaining complete control over the statement handles.
+ .
+ There are many important differences between this module and DBIx::Abstract,
+ especially when it comes to WHERE clauses. Chief among these changes is a
+ new design to make it easier to generate SQL from Perl data structures and
+ hopefully more intuitive. The underlying idea is that this module does what
+ you mean, based on the data structures you provide it; the biggest advantage
+ is that you don't have to modify your code every time your data changes.

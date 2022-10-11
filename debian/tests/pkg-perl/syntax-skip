@@ -1,0 +1,2 @@
+# needs DBIx::Class::Storage::Statistics but this leads to some circular dependency
+DBIx/Class/Storage/Debug/PrettyPrint.pm
